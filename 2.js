@@ -18,7 +18,7 @@ var hello = require('./helloworld2.js');
 
 var contents = hello.say(args.file, function(err,contents) {
   if(err) {
-    console.error("Error: " + err);
+    console.error(err);
   }
   else {
     console.log(contents.toString());
