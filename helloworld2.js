@@ -1,21 +1,20 @@
-
 function readFile(filename) {
-  var sq = ASQ();
+    var sq = ASQ();
 
-  fs.readFile(filename)
+    fs.readFile(filename, sq.errfcb () );
 
-  return sq;
+    return sq;
 }
 
 function delayMsg(done, contents) {
-  setTimeout(function(){
-    done(contents);
-  },1000);
+    setTimeout(function() {
+        done(contents);
+    }, 1000);
 }
 
 function say(filename) {
-  return readFile(filename)
-    .then(delayMsg);
+    return readFile(filename)
+        .then(delayMsg);
 }
 
 var fs = require('fs');

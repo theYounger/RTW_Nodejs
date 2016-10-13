@@ -1,16 +1,15 @@
-var fs = require('fs');
-
 function say(filename, cb) {
-  return fs.readFile(filename,function(err, contents) {
-    if(err) {
+  return fs.readFile(filename, function(err, contents) {
+    if (err) {
       cb(err);
-    }
-    else {
-      setTimeout(function() {
+    } else {
+      setTimeout(function(){
         cb(null, contents);
-      },1000);
+      }, 3000);
     }
   });
 }
+
+var fs = require('fs');
 
 module.exports.say = say;
